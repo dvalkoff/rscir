@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  server:
+    build: .
+    volumes:
+      - ./index.php:/var/www/html/index.php
+      - ./src:/var/www/html/src
+    ports:
+      - "80:80"
+  db:
+    image: mysql
+    volumes:
+      - ./db/schema:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: password
