@@ -3,8 +3,7 @@ services:
   server:
     build: .
     volumes:
-      - ./index.php:/var/www/html/index.php
-      - ./src:/var/www/html/src
+      - ./src:/var/www/html
     ports:
       - "80:80"
   db:

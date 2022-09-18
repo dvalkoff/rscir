@@ -1,7 +1,7 @@
 <?php
-include 'constants.php';
+include 'Constants.php';
 
-class DB
+class DatabaseConnection
 {
 
     private static $conn;

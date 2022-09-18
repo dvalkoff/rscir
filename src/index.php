@@ -1,6 +1,7 @@
 <html lang="en">
 <head>
     <title>Hello world page</title>
+    <link rel="stylesheet" href="resources/style.css" type="text/css"/>
 </head>
 <body>
 <h1>Таблица пользователей данного продукта</h1>
@@ -9,9 +10,9 @@
         <th>Id</th><th>Name</th><th>Surname</th>
     </tr>
     <?php
-    include 'src/db.php';
+    include 'config/DatabaseConnection.php';
 
-    $dbh = DB::connect();
+    $dbh = DatabaseConnection::connect();
 
     foreach ($dbh->query('SELECT * FROM appDB.users') as $row) {
         echo "<tr><td>{$row['ID']}</td><td>{$row['name']}</td><td>{$row['surname']}</td></tr>";
