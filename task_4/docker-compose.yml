@@ -25,8 +25,14 @@ services:
     volumes:
       - ./apache/content:/var/www/html/
       - ./apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./apache/php.ini:/usr/local/etc/php/conf.d/php.ini
     ports:
       - "8081:80"
     links:
       - db
       - nginx
+  redis:
+    image: redis:7.0.5
+    restart: always
+    ports:
+      - "6379:6379"

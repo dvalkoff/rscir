@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS auth
 );
 
 INSERT INTO auth (login, password)
-VALUES ('user', '{SHA}W6ph5Mm5Pz8GgiULbPgzG37mj9g=');
+VALUES ('user', '{SHA}W6ph5Mm5Pz8GgiULbPgzG37mj9g='); -- password
 
 CREATE TABLE IF NOT EXISTS cars
 (
@@ -47,3 +47,13 @@ INSERT INTO services(name, price, currency)
 VALUES ('Тех осмотр', 5000, 'RUB'),
        ('Замена резины', 3000, 'RUB'),
        ('Замена масла', 2000, 'RUB');
+
+
+CREATE TABLE pdf_files (
+                        session_id VARCHAR(255) NOT NULL,
+                        name VARCHAR(30) NOT NULL,
+                        type VARCHAR(30) NOT NULL,
+                        size INT NOT NULL,
+                        content MEDIUMBLOB NOT NULL,
+                        PRIMARY KEY(session_id)
+);
